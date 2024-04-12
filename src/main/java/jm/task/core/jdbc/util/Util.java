@@ -34,7 +34,11 @@ public class Util {
         prop.setProperty("hibernate.connection.password", "root");
         // Конфигурация hibernate.
         prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect"); // указываем диалект, с какой БД необходимо работать хиберу.
-        prop.setProperty("hibernate.show_sql", "true"); // что бы хибер показывал какие SQL запросы он делает.
+        //prop.setProperty("hibernate.use_sql_comments", "true");
+        prop.setProperty("hibernate.show_sql", "true");// что бы хибер показывал какие SQL запросы он делает.
+        prop.setProperty("hibernate.format_sql", "true");
+        //prop.setProperty("hibernate.hbm2ddl.auto", "update");
+
         prop.setProperty("hibernate.current_session_context_class", "thread");
 
         Configuration configuration = new Configuration();

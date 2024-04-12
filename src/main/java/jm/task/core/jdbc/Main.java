@@ -1,7 +1,5 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
@@ -19,6 +17,8 @@ public class Main {
         userService.saveUser("Борис", "Ловкин", (byte) 60);
         userService.saveUser("Ирина", "Ямова", (byte) 20);
         userService.saveUser("Ольга", "Казлова", (byte) 29);
+
+        userService.removeUserById(4);
         List<User> userList = userService.getAllUsers();
         userList.forEach(System.out::println);
         userService.cleanUsersTable();
